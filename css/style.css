@@ -1,0 +1,185 @@
+@font-face {
+    font-family: 'Hanson Bold';
+    src: url('../fonts/Hanson-Bold.ttf') format('truetype');
+    font-weight: bold;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Avenir Book';
+    src: url('../fonts/Avenir-Book.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    font-size: 15pt;
+    min-height: 100vh;
+}
+
+h1, h2, .nav {
+    font-family: 'Hanson Bold', Arial, sans-serif;
+    font-size: 45pt;
+}
+
+.bg-fixed-full {
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+
+.enter-page {
+    background-image: url('../images/Background_Image_WebOp.jpg');
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.logo {
+    width: 500px;
+    height: 500px;
+    background: url('../images/Enter_Button.png') center/cover;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+.nav {
+    background: white;
+    color: black;
+    padding: 1rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    font-size: 24pt;
+}
+
+.nav a {
+    color: black;
+    text-decoration: none;
+    margin: 0 1rem;
+    font-weight: 500;
+}
+
+.nav a:hover {
+    opacity: 0.8;
+}
+
+.hamburger {
+    display: none;
+    font-size: 1.5rem;
+    cursor: pointer;
+    color: black;
+}
+
+.home-page {
+    background-image: url('../images/Hero_Image_WebOp.jpg');
+    min-height: calc(100vh - 60px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+}
+
+.blog-page {
+    padding: 2rem;
+    background-image: url('../images/Background_Image_WebOp.jpg');
+    min-height: calc(100vh - 60px);
+    color: white;
+}
+
+.portfolio-page {
+    padding: 2rem;
+    background-image: url('../images/Background_Image_WebOp.jpg');
+    min-height: calc(100vh - 60px);
+    color: white;
+}
+
+.contact-page {
+    padding: 2rem;
+    background-image: url('../images/Background_Image_WebOp.jpg');
+    min-height: calc(100vh - 60px);
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    gap: 2rem;
+}
+
+.contact-form {
+    flex: 1;
+    max-width: 600px;
+}
+
+.contact-form input,
+.contact-form textarea {
+    width: 100%;
+    padding: 0.8rem;
+    margin-bottom: 1rem;
+    border: 2px solid white;
+    background: transparent;
+    color: white;
+    font-family: 'Avenir Book', Arial, sans-serif;
+    font-size: 15pt;
+}
+
+.contact-form input::placeholder,
+.contact-form textarea::placeholder {
+    color: rgba(255, 255, 255, 0.7);
+}
+
+.contact-graphic {
+    flex: 1;
+    background: url('../images/BooksOpen2025_Graphic_LighterColour_WebOp.jpg') center/cover no-repeat;
+    min-height: 200px;
+}
+
+.video-container {
+    max-width: 800px;
+    margin: 2rem auto;
+    background: #ddd;
+    aspect-ratio: 16/9;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.play-button {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    background: rgba(0,0,0,0.5);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+
+@media (max-width: 768px) {
+    h1, h2 {
+        font-size: 32pt;
+    }
+
+    .logo {
+        width: 200px;
+        height: 200px;
+    }
+
+    .contact-page {
+        flex-direction: column;
+    }
+
+    .contact-graphic {
+        min-height: 300px;
+    }
+}

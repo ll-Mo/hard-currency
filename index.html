@@ -4,220 +4,51 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Hard Currency</title>
-    <style>
-        @font-face {
-            font-family: 'Hanson Bold';
-            src: url('fonts/Hanson-Bold.woff2') format('woff2'),
-                 url('fonts/Hanson-Bold.woff') format('woff'),
-                 url('fonts/Hanson-Bold.ttf') format('truetype');
-            font-weight: bold;
-            font-style: normal;
-            font-display: swap;
-        }
-
-        @font-face {
-            font-family: 'Avenir Book';
-            src: url('fonts/Avenir-Book.woff2') format('woff2'),
-                 url('fonts/Avenir-Book.woff') format('woff'),
-                 url('fonts/Avenir-Book.ttf') format('truetype');
-            font-weight: normal;
-            font-style: normal;
-            font-display: swap;
-        }
-
-        body {
-            margin: 0;
-            font-family: 'Avenir Book', Arial, sans-serif;
-            font-size: 15pt;
-            min-height: 100vh;
-        }
-
-        h1, h2, .nav {
-            font-family: 'Hanson Bold', Arial, sans-serif;
-            font-size: 45pt;
-        }
-
-        .enter-page {
-            background: url('images/Background_Image_WebOp.jpg') center/cover no-repeat fixed;
-            min-height: 100vh;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-        }
-
-        .logo {
-            width: 500px;
-            height: 500px;
-            background: url('images/Enter_Button.png') center/cover;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            cursor: pointer;
-            text-decoration: none;
-        }
-
-        .nav {
-            background: white;
-            color: black;
-            padding: 1rem;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-            font-size: 24pt;
-        }
-
-        .nav a {
-            color: black;
-            text-decoration: none;
-            margin: 0 1rem;
-            font-weight: 500;
-        }
-
-        .nav a:hover {
-            opacity: 0.8;
-        }
-
-        .hamburger {
-            display: none;
-            font-size: 1.5rem;
-            cursor: pointer;
-            color: black;
-        }
-
-        .home-page {
-            background: url('images/Hero_Image_WebOp.jpg') center/cover no-repeat fixed;
-            min-height: calc(100vh - 60px);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: white;
-        }
-
-        .blog-page {
-            padding: 2rem;
-            background: url('images/Background_Image_WebOp.jpg') center/cover no-repeat fixed;
-            min-height: calc(100vh - 60px);
-            color: white;
-        }
-
-        .contact-page {
-            padding: 2rem;
-            background: url('images/Background_Image_WebOp.jpg') center/cover no-repeat fixed;
-            min-height: calc(100vh - 60px);
-            color: white;
-            display: flex;
-            justify-content: space-between;
-            gap: 2rem;
-        }
-
-        .contact-form {
-            flex: 1;
-            max-width: 600px;
-        }
-
-        .contact-form input,
-        .contact-form textarea {
-            width: 100%;
-            padding: 0.8rem;
-            margin-bottom: 1rem;
-            border: 2px solid white;
-            background: transparent;
-            color: white;
-            font-family: 'Avenir Book', Arial, sans-serif;
-            font-size: 15pt;
-        }
-
-        .contact-form input::placeholder,
-        .contact-form textarea::placeholder {
-            color: rgba(255, 255, 255, 0.7);
-        }
-
-        .contact-graphic {
-            flex: 1;
-            background: url('images/BooksOpen2025_Graphic_LighterColour_WebOp.jpg') center/cover no-repeat;
-            min-height: 200px;
-        }
-
-        .video-container {
-            max-width: 800px;
-            margin: 2rem auto;
-            background: #ddd;
-            aspect-ratio: 16/9;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-
-        .play-button {
-            width: 80px;
-            height: 80px;
-            border-radius: 50%;
-            background: rgba(0,0,0,0.5);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            cursor: pointer;
-        }
-
-        @media (max-width: 768px) {
-            h1, h2 {
-                font-size: 32pt;
-            }
-
-            .logo {
-                width: 200px;
-                height: 200px;
-            }
-
-            .contact-page {
-                flex-direction: column;
-            }
-
-            .contact-graphic {
-                min-height: 300px;
-            }
-        }
-    </style>
+    <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
     <!-- Enter Page -->
-    <div class="enter-page" id="enterPage">
-        <a href="#home" class="logo" onclick="showPage('home')">
+    <div class="enter-page bg-fixed-full" id="enterPage">
+        <a href="#home" class="logo">
         </a>
     </div>
 
     <!-- Main Content -->
-    <div style="display:none" id="mainContent">
+    <main id="mainContent" style="display:none">
         <!-- Navigation -->
         <nav class="nav">
             <div>HARD CURRENCY</div>
             <div class="nav-links">
-                <a href="#home" onclick="showPage('home')">HOME</a>
-                <a href="#blog" onclick="showPage('blog')">BLOG</a>
-                <a href="#portfolio" onclick="showPage('portfolio')">PORTFOLIO</a>
-                <a href="#contact" onclick="showPage('contact')">CONTACT</a>
+                <a href="#home">HOME</a>
+                <a href="#blog">BLOG</a>
+                <a href="#portfolio">PORTFOLIO</a>
+                <a href="#contact">CONTACT</a>
             </div>
         </nav>
 
         <!-- Home Page -->
-        <div class="home-page" id="homePage" style="display:none">
-            <h1></h1>
-        </div>
+        <section class="home-page bg-fixed-full" id="homePage" style="display:none">
+        </section>
 
         <!-- Blog Page -->
-        <div class="blog-page" id="blogPage" style="display:none">
-            <h2>SKYRAY Full Set @ THE DESMOND</h2>
-            <p>Description of the performance goes here...</p>
-            <div class="video-container">
-                <div class="play-button">▶</div>
-            </div>
-        </div>
+        <section class="blog-page bg-fixed-full" id="blogPage" style="display:none">
+            <article>
+                <h2>SKYRAY Full Set @ THE DESMOND</h2>
+                <p>Description of the performance goes here...</p>
+                <div class="video-container">
+                    <div class="play-button">▶</div>
+                </div>
+            </article>
+        </section>
+
+        <!-- Portfolio Page -->
+        <section class="portfolio-page bg-fixed-full" id="portfolioPage" style="display:none">
+            <h2>PORTFOLIO</h2>
+            <!-- Portfolio content goes here -->
+        </section>
 
         <!-- Contact Page -->
-        <div class="contact-page" id="contactPage" style="display:none">
+        <section class="contact-page bg-fixed-full" id="contactPage" style="display:none">
             <div class="contact-form">
                 <h2>LEAVE A MESSAGE</h2>
                 <form>
@@ -225,31 +56,12 @@
                     <input type="email" placeholder="Email:" required>
                     <input type="tel" placeholder="Phone:">
                     <textarea placeholder="Message:" rows="4" required></textarea>
+                    <button type="submit">Send Message</button>
                 </form>
             </div>
             <div class="contact-graphic"></div>
-        </div>
-    </div>
-
-    <script>
-        function showPage(page) {
-            document.getElementById('enterPage').style.display = 'none';
-            document.getElementById('mainContent').style.display = 'block';
-            
-            // Hide all pages first
-            document.getElementById('homePage').style.display = 'none';
-            document.getElementById('blogPage').style.display = 'none';
-            document.getElementById('contactPage').style.display = 'none';
-            
-            // Show the selected page
-            if (page === 'home') {
-                document.getElementById('homePage').style.display = 'flex';
-            } else if (page === 'blog') {
-                document.getElementById('blogPage').style.display = 'block';
-            } else if (page === 'contact') {
-                document.getElementById('contactPage').style.display = 'flex';
-            }
-        }
-    </script>
+        </section>
+    </main>
+    <script src="js/script.js"></script>
 </body>
 </html>
