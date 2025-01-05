@@ -1,26 +1,46 @@
 async function fetchYouTubeVideosWithAPI() {
-    const apiKey = 'YOUR_API_KEY'; // Replace with your actual API key  
-    const channelId = 'UCY9jUT1jbbAnysQZnmOVaiA';
-    const maxResults = 5; // Number of videos to display
-    const apiUrl = `https://www.googleapis.com/youtube/v3/search?part=snippet&channelId=${channelId}&order=date&type=video&key=${apiKey}&maxResults=${maxResults}`;
     const feedContainer = document.getElementById('youtube-feed-container');
-
-    // Basic error handling: Check if the container exists
+    
     if (!feedContainer) {
         console.error('YouTube feed container not found.');
         return;
     }
 
+    // Show loading state
+    feedContainer.innerHTML = '<div class="loading">Loading videos...</div>';
+
     try {
-        const response = await fetch(apiUrl);
+        const channelId = 'UCY9jUT1jbbAnysQZnmOVaiA';
+        const apiKey = window.YOUTUBE_API_KEY;
+        const response = await fetch(
+            `https://www.googleapis.com/youtube/v3/search?key=${apiKey}&channelId=${channelId}&part=snippet,id&order=date&maxResults=5`
+        );
+        
         if (!response.ok) {
             throw new Error(`HTTP error! status: ${response.status}`);
         }
+        
         const data = await response.json();
-        displayYouTubeVideos(data.items, feedContainer);
+        const videos = data.items.map(item => ({
+            id: { videoId: item.id.videoId },
+            snippet: {
+                title: item.snippet.title,
+                thumbnails: {
+                    medium: {
+                        url: item.snippet.thumbnails.medium.url
+                    }
+                }
+            }
+        }));
+        
+        displayYouTubeVideos(videos, feedContainer);
     } catch (error) {
         console.error('Error fetching YouTube videos:', error);
-        feedContainer.innerHTML = '<p>Failed to load YouTube videos.</p>';
+        feedContainer.innerHTML = `
+            <div class="error">
+                <p>Failed to load YouTube videos.</p>
+                <button onclick="fetchYouTubeVideosWithAPI()">Try Again</button>
+            </div>`;
     }
 }
 
@@ -61,7 +81,6 @@ function showPage(page) {
     // Hide all pages first
     document.getElementById('homePage').style.display = 'none';
     document.getElementById('blogPage').style.display = 'none';
-    document.getElementById('portfolioPage').style.display = 'none';
     document.getElementById('contactPage').style.display = 'none';
     
     // Show the selected page
@@ -70,8 +89,6 @@ function showPage(page) {
     } else if (page === 'blog') {
         document.getElementById('blogPage').style.display = 'block';
         fetchYouTubeVideosWithAPI();
-    } else if (page === 'portfolio') {
-        document.getElementById('portfolioPage').style.display = 'block';
     } else if (page === 'contact') {
         document.getElementById('contactPage').style.display = 'flex';
     }

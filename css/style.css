@@ -19,12 +19,16 @@ body {
     font-family: Arial, sans-serif;
     font-size: 15pt;
     min-height: 100vh;
-    overflow: hidden;
 }
 
 h1, h2, .nav {
     font-family: 'Hanson Bold', Arial, sans-serif;
     font-size: 45pt;
+}
+
+.nav h1 {
+    font-size: 24pt;
+    font-family: inherit;
 }
 
 .bg-fixed-full {
@@ -111,11 +115,6 @@ h1, h2, .nav {
     min-height: calc(100vh - 60px);
 }
 
-.portfolio-page {
-    padding: 2rem;
-    min-height: calc(100vh - 60px);
-}
-
 .contact-page {
     padding: 1rem;
     min-height: calc(100vh - 60px);
@@ -166,6 +165,9 @@ h1, h2, .nav {
     display: flex;
     align-items: center;
     justify-content: center;
+    width: 100%;
+    padding: 0 1rem;
+    box-sizing: border-box;
 }
 
 .play-button {
