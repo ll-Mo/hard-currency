@@ -34,18 +34,19 @@ h1, h2, .nav {
 }
 
 .enter-page {
-    background-image: url('../images/Background_Image_WebOp.jpg');
+    background-image: url('../images/white-crumpled-paper-texture-bg.jpg');
     min-height: 100vh;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    padding-top: 0;
 }
 
 .logo {
     width: 500px;
     height: 500px;
-    background: url('../images/Enter_Button.png') center/cover;
+    background: url('../images/hard-currency-enter-logo.png') center/cover;
     border-radius: 50%;
     display: flex;
     align-items: center;
@@ -63,6 +64,11 @@ h1, h2, .nav {
     align-items: center;
     box-shadow: 0 2px 4px rgba(0,0,0,0.1);
     font-size: 24pt;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
 }
 
 .nav a {
@@ -84,32 +90,30 @@ h1, h2, .nav {
 }
 
 .home-page {
-    background-image: url('../images/Hero_Image_WebOp.jpg');
-    min-height: calc(100vh - 60px);
+    background-image: url('../images/hard-currency-downside-ryan-pond-live.jpg');
     display: flex;
     align-items: center;
     justify-content: center;
     color: white;
+    min-height: calc(100vh - 60px);
 }
 
 .blog-page {
     padding: 2rem;
-    background-image: url('../images/Background_Image_WebOp.jpg');
+    background-image: url('../images/white-crumpled-paper-texture-bg.jpg');
     min-height: calc(100vh - 60px);
     color: white;
 }
 
 .portfolio-page {
     padding: 2rem;
-    background-image: url('../images/Background_Image_WebOp.jpg');
-    min-height: calc(100vh - 60px);
+    background-image: url('../images/white-crumpled-paper-texture-bg.jpg');
     color: white;
 }
 
 .contact-page {
     padding: 2rem;
-    background-image: url('../images/Background_Image_WebOp.jpg');
-    min-height: calc(100vh - 60px);
+    background-image: url('../images/white-crumpled-paper-texture-bg.jpg');
     color: white;
     display: flex;
     justify-content: space-between;
@@ -140,7 +144,7 @@ h1, h2, .nav {
 
 .contact-graphic {
     flex: 1;
-    background: url('../images/BooksOpen2025_Graphic_LighterColour_WebOp.jpg') center/cover no-repeat;
+    background: url('../images/hard-currency-devil-books-open-design-2025.jpg') center/cover no-repeat;
     min-height: 200px;
 }
 
@@ -163,6 +167,42 @@ h1, h2, .nav {
     align-items: center;
     justify-content: center;
     cursor: pointer;
+}
+
+#youtube-feed-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+    margin: 2rem 0;
+}
+
+.youtube-video-item {
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 8px;
+    overflow: hidden;
+    transition: transform 0.2s ease;
+}
+
+.youtube-video-item:hover {
+    transform: translateY(-5px);
+}
+
+.youtube-video-item img {
+    width: 100%;
+    height: auto;
+    aspect-ratio: 16/9;
+    object-fit: cover;
+}
+
+.youtube-video-item h3 {
+    font-family: 'Avenir Book', Arial, sans-serif;
+    font-size: 1rem;
+    margin: 1rem;
+    color: white;
+}
+
+.enter-page + main {
+    padding-top: 60px;
 }
 
 @media (max-width: 768px) {
