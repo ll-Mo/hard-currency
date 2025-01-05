@@ -125,6 +125,20 @@ h1, h2, .nav {
     max-width: 600px;
 }
 
+.contact-form {
+    position: relative;
+}
+
+.form-image {
+    width: 100%;
+    max-width: 300px;
+    height: auto;
+    margin: 0 auto 2rem;
+    display: block;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+}
+
 .contact-form input,
 .contact-form textarea {
     width: 100%;
@@ -140,12 +154,6 @@ h1, h2, .nav {
 .contact-form input::placeholder,
 .contact-form textarea::placeholder {
     color: rgba(255, 255, 255, 0.7);
-}
-
-.contact-graphic {
-    flex: 1;
-    background: url('../images/hard-currency-devil-books-open-design-2025.jpg') center/cover no-repeat;
-    min-height: 200px;
 }
 
 .video-container {

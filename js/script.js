@@ -1,5 +1,5 @@
 async function fetchYouTubeVideosWithAPI() {
-    const apiKey = 'AIzaSyCoMW6F0nZ8EZ5bfukKtYe8poHrUHR7Ps0';
+    const apiKey = 'YOUR_API_KEY'; // Replace with your actual API key  
     const channelId = 'UCY9jUT1jbbAnysQZnmOVaiA';
     const maxResults = 5; // Number of videos to display
     const apiUrl = `https://www.googleapis.com/youtube/v3/search?part=snippet&channelId=${channelId}&order=date&type=video&key=${apiKey}&maxResults=${maxResults}`;
