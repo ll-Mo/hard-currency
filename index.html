@@ -8,54 +8,58 @@
 </head>
 <body>
     <!-- Enter Page -->
-    <div class="enter-page bg-fixed-full" id="enterPage">
+    <div class="enter-page page-bg page-content bg-fixed-full" id="enterPage">
         <a href="#home" class="logo">
         </a>
     </div>
 
     <!-- Main Content -->
     <main id="mainContent" style="display:none">
-        <!-- Navigation -->
-        <nav class="nav">
+        <!-- Header with Navigation -->
+        <header class="nav">
             <div>HARD CURRENCY</div>
-            <div class="nav-links">
+            <nav class="nav-links">
                 <a href="#home">HOME</a>
                 <a href="#blog">BLOG</a>
                 <a href="#portfolio">PORTFOLIO</a>
                 <a href="#contact">CONTACT</a>
-            </div>
-        </nav>
+            </nav>
+        </header>
 
         <!-- Home Page -->
         <section class="home-page bg-fixed-full" id="homePage">
         </section>
 
         <!-- Blog Page -->
-        <section class="blog-page bg-fixed-full" id="blogPage" style="display:none">
+        <section class="blog-page page-bg page-content bg-fixed-full" id="blogPage" style="display:none">
             <h2>BLOG</h2>
-            <div id="youtube-feed-container">
+            <div class="youtube-feed-container">
                 <!-- YouTube videos will be inserted here -->
             </div>
         </section>
 
         <!-- Portfolio Page -->
-        <section class="portfolio-page bg-fixed-full" id="portfolioPage" style="display:none">
+        <section class="portfolio-page page-bg page-content bg-fixed-full" id="portfolioPage" style="display:none">
             <h2>PORTFOLIO</h2>
             <!-- Portfolio content goes here -->
         </section>
 
         <!-- Contact Page -->
-        <section class="contact-page bg-fixed-full" id="contactPage" style="display:none">
+        <section class="contact-page page-bg page-content bg-fixed-full" id="contactPage" style="display:none">
             <div class="contact-form">
                 <h2>LEAVE A MESSAGE</h2>
                 <form>
                     <img src="images/hard-currency-devil-books-open-design-2025.jpg" 
                          alt="Hard Currency Design" 
                          class="form-image">
-                    <input type="text" placeholder="Name:" required>
-                    <input type="email" placeholder="Email:" required>
-                    <input type="tel" placeholder="Phone:">
-                    <textarea placeholder="Message:" rows="4" required></textarea>
+                    <label for="name">Name:</label>
+                    <input type="text" id="name" placeholder="Name:" required>
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" placeholder="Email:" required>
+                    <label for="phone">Phone:</label>
+                    <input type="tel" id="phone" placeholder="Phone:">
+                    <label for="message">Message:</label>
+                    <textarea id="message" placeholder="Message:" rows="4" required></textarea>
                     <button type="submit">Send Message</button>
                 </form>
             </div>
