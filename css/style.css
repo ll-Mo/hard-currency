@@ -19,6 +19,7 @@ body {
     font-family: Arial, sans-serif;
     font-size: 15pt;
     min-height: 100vh;
+    overflow: hidden;
 }
 
 h1, h2, .nav {
@@ -109,15 +110,18 @@ h1, h2, .nav {
     padding: 2rem;
     background-image: url('../images/white-crumpled-paper-texture-bg.jpg');
     color: white;
+    min-height: calc(100vh - 60px);
 }
 
 .contact-page {
-    padding: 2rem;
+    padding: 1rem;
     background-image: url('../images/white-crumpled-paper-texture-bg.jpg');
     color: white;
     display: flex;
-    justify-content: space-between;
-    gap: 2rem;
+    justify-content: center;
+    align-items: center;
+    min-height: calc(100vh - 60px);
+    box-sizing: border-box;
 }
 
 .contact-form {
@@ -219,6 +223,12 @@ h1, h2, .nav {
     }
 
     .logo {
+        width: 200px;
+        height: 200px;
+    }
+
+    .contact-page {
+        flex-direction: column;
         width: 200px;
         height: 200px;
     }
